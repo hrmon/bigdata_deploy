@@ -14,6 +14,6 @@ services:
     depends_on:
       - spark-master
     ports:
-      - "8081:8083"
+      - "8083:8081"
     environment:
       - ENABLE_INIT_DAEMON=false
