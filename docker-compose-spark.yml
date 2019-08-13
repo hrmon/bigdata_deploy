@@ -21,3 +21,14 @@ services:
       - ENABLE_INIT_DAEMON=false
     volumes:
       - /data/spark:/data/spark
+  spark-app:
+    image: spark-digest
+    container_name: spark-app
+    depends_on:
+      - spark-master
+    volumes:
+      - /data/spark:/data/spark
+    environment:
+      - SPARK_MASTER_NAME=spark-master
+      - SPARK_MASTER_PORT=7077
+      - SPARK_APPLICATION_ARGS="zookeeper:2181 carloc sparkDigestGroup"
