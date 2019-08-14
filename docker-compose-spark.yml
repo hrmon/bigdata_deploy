@@ -31,4 +31,5 @@ services:
     environment:
       - SPARK_MASTER_NAME=spark-master
       - SPARK_MASTER_PORT=7077
-      - SPARK_APPLICATION_ARGS="zookeeper:2181 carloc sparkDigestGroup"
+      - SPARK_APPLICATION_ARGS="broker:29092 carloc sparkDigestGroup"
+      - ENABLE_INIT_DAEMON=false
